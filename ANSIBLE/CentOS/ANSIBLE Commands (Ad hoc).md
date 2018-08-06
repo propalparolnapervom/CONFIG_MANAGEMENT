@@ -1,5 +1,9 @@
 # ANSIBLE COMMANDS (Ad hoc)
 
+[Ad-hoc Docs](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#intro-adhoc)
+
+An **ad-hoc command** is something that you might type in to do something really quick, but don’t want to save for later.
+
 ## OVERALL
 
 **Check installed version**
