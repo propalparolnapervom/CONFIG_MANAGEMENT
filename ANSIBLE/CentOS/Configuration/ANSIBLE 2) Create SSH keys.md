@@ -7,7 +7,7 @@
 **ssh-keygen** is a tool for creating new authentication key pairs for SSH. Such key pairs are used for automating logins, single sign-on, and for authenticating hosts.
 
 
-Generate a key pair
+Generate a key pair on the Control Machine
 ```
       #Optionally, choose algorithm to use or leave it default:
       #   ssh-keygen -t rsa -b 4096
@@ -41,7 +41,7 @@ ssh-keygen
 
 ## COPYING THE PUBLIC KEY TO THE SERVER
 
-Copy *public* (**!!!**) key to **each** *location* and *user* you'd like to connect eventually
+Copy *public* (**!!!**) key from Control Machine to each Remote Machine to **each** *location* and *user* you'd like to connect eventually
 ```
       #File ~remote_user/.ssh/authorized_keys will be updated on the remote side by default
       
