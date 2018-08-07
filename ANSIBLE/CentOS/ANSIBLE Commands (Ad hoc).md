@@ -36,21 +36,21 @@ Syntax for Ansible ad-hoc commands is
 ansible <hosts> [-m <module_name>] -a <"arguments"> -u <username> [--become]
 ```
   
-**hosts**: It can be any entry in the inventory file. For specifying all hosts in inventory, use all or '*'. Wild card patterns are also accepted.
+      - **hosts**: It can be any entry in the inventory file. For specifying all hosts in inventory, use all or '*'. Wild card patterns are also accepted.
 
-**module_name**: It's an optional parameter. There are hundreds of modules available in Ansible. By default it is command. For example shell, copy, yum, apt, file.
+      - **module_name**: It's an optional parameter. There are hundreds of modules available in Ansible. By default it is command. For example shell, copy, yum, apt, file.
 
-**arguments**: We should pass values that are required by the module. It may change according to the module used.
+      - **arguments**: We should pass values that are required by the module. It may change according to the module used.
 
-**username**: It specifies the user account in which Ansible can execute commands. User account, SSH.
+      - **username**: It specifies the user account in which Ansible can execute commands. User account, SSH.
 
-**become**: It's an optional parameter specified when we want to execute operations that need sudo privilege. By default become is false.
+      - **become**: It's an optional parameter specified when we want to execute operations that need sudo privilege. By default become is false.
 
 If you put a -c option, then Ansible will do a dry run of the command. It will not actually be applied on the nodes.
 
 
 
-## RUN
+## EXAMPLES
 
     
       
