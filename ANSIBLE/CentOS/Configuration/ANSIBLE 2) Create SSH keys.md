@@ -41,7 +41,7 @@ ssh-keygen
 
 ## COPYING THE PUBLIC KEY TO THE SERVER
 
-Copy *public* (**!!!**) key from Control Machine to each Remote Machine to **each** *location* and *user* you'd like to connect eventually
+Copy *public* (**!!!**) key from Control Machine to each Remote Machine (**each** *server*/*user* combination )
 ```
       #File ~remote_user/.ssh/authorized_keys will be updated on the remote side by default
       
