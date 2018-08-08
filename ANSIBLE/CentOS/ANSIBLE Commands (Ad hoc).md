@@ -77,8 +77,11 @@ ansible remote -a "touch /tmp/finally" -u xburser
 
 ### MODULES
 
+[All modules list/description](https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html?highlight=copy%20module)
 
 **command**
+
+[Command Docs](https://docs.ansible.com/ansible/latest/modules/command_module.html?highlight=command)
 
 Used to execute command in bash and see the result
 ```
@@ -90,6 +93,8 @@ ansible remote-host -m command -a "pwd"
 
 
 **shell**
+
+[Shell Docs](https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module)
 
 Operations like *piping* and *redirects* will not work in command. In these situations, you have to use `shell` module.
 ```
@@ -119,7 +124,23 @@ Create dir `/tmp/test_dir`, sets its permission and ownership
 ansible remote-host -m file -a 'dest=/tmp/test_dir mode=700 state=directory owner=vagrant group=vagrant'
 ```
 
+**copy**
 
+[Copy Docs](https://docs.ansible.com/ansible/latest/modules/copy_module.html#copy-module)
+
+Used for copying files "Control Machine -> Remote Machine"
+```
+ansible remote-host -m copy -a 'src=/tmp/is_on_orig_mach.txt dest=/tmp/was_on_orig_mach.txt'
+```
+
+**fetch**
+
+[Fetch Docs](https://docs.ansible.com/ansible/latest/modules/fetch_module.html#fetch-module)
+
+Used for copying files "Remote Machine -> Control Machine"
+```
+ansible remote-host -m fetch -a 'src=/tmp/was_on_orig_mach.txt dest=/tmp/again_on_orig_mach.txt'
+```
 
 
 
