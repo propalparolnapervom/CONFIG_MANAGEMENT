@@ -1,11 +1,11 @@
 # TERRAFORM INSTALLATION
 
+Terraform must be installed on your machine.
+
 [Download Link](https://www.terraform.io/downloads.html)
 
 [Installation Process](https://www.terraform.io/intro/getting-started/install.html)
 
-
-Terraform must be installed on your machine.
 
 
 ## WINDOWS
