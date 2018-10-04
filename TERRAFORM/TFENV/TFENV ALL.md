@@ -50,11 +50,30 @@ Install Terraform with 0.11.8 version
 tfenv install 0.11.8
 ```
 
+View installed Terraform versions
+```
+tfenv list
+```
+
+Use specific Terraform version
+```
+tfenv use 0.7.0
+tfenv use latest
+```
+
+Uninstall specific Terraform version
+```
+tfenv uninstall 0.7.0
+tfenv uninstall latest
+```
 
 
 
 
-## Usage
+
+## Usage (ORIGINAL AUTHOR'S NOTES)
+
+
 ### tfenv install [version]
 Install a specific version of Terraform. Available options for version:
 - `i.j.k` exact version to install
