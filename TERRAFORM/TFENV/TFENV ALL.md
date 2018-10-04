@@ -43,6 +43,8 @@ Install Terraform latest version
 tfenv install latest
 ```
 
+> NOTE: Terraform will be intalled on `<tfenv_install_dir>/bin` dir
+
 
 
 Install Terraform with 0.11.8 version
