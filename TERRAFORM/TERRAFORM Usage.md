@@ -7,14 +7,6 @@
 
 Implement Terraform code, which would deploy an EC2 instance, running within ASG with ELB in front of it. This instance, through ELB, should share port 22 (SSH port) to outside Internet. Think about security of your solution.
 
-**COUPLE OF THOUGHTS**
-
-I was told that no specific code expected for now, just general thoughts.
-
-But the thing is that I've never done such practical AWS things before and I wasn't aware about Terraform, so I had to do this manually anyway - to understand what steps will be required to be done by Terraform. 
-
-Time has been spent on research anyway, so eventually I have tried to make some basic simplest working code.
-
 
 ## STEPS OF IMPLEMENTATION
 
