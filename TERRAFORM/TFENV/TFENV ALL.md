@@ -25,6 +25,18 @@ Add <TFENV_TEMP>/bin to your $PATH any way you like
 echo 'export PATH=~/init_install/.tfenv/bin:$PATH' >> ~/.bash_profile
 ```
 
+In a new terminal session
+
+
+Install latest Terraform version
+```
+tfenv install latest
+```
+
+#View installed Terraform versions
+```
+tfenv list
+```
 
 
 ## USAGE
