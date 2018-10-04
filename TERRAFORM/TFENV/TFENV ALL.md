@@ -39,11 +39,13 @@ tfenv list-remote
 
 
 Install Terraform latest version
+
+> NOTE: Terraform will be intalled on `<tfenv_install_dir>/bin` dir
+
 ```
 tfenv install latest
 ```
 
-> NOTE: Terraform will be intalled on `<tfenv_install_dir>/bin` dir
 
 
 
