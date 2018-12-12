@@ -31,9 +31,20 @@ ssh-keygen
 
 ## COPYING THE PUBLIC KEY TO THE REMOTE SERVER
 
-Copy **public** (**!!!**) key from Control Machine to each **Remote Machine** (**each** *server*/*user* combination )
+Copy **public** (**!!!**) key from **Control Machine** to each **Remote Machine** 
+
+(**each** *server*/*user* combination)
+
+As `vagrant` user on **Control Machine**.
 ```
       #File ~remote_user/.ssh/authorized_keys will be updated on the remote side by default
       
 ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub vagrant@remote-host
+```
+
+## VERIFICATION
+
+As `vagrant` user on **Control Machine** - try to login to each **Remote Machine**
+```
+ssh 'vagrant@remote-host'
 ```
