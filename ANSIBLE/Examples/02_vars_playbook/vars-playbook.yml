@@ -1,0 +1,10 @@
+-
+  name: Update nameserver entry into resolv.conf file on localhost
+  hosts: all
+  vars:
+    car_model: "Audi"
+  tasks:
+    -
+      name: Print my car model
+      shell: echo My car is "{{ car_model }}" > /tmp/car.txt
+
