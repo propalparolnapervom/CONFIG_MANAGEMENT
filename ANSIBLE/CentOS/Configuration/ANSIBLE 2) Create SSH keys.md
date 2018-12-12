@@ -1,13 +1,15 @@
 # CREATE A KEY PAIR
 
-## SSH-KEYGEN - GENERATE A NEW SSH KEY
+## SSH-KEYGEN - GENERATE A NEW SSH KEY on CONTROL SERVER
 
 [Official Docs](https://www.ssh.com/ssh/keygen/)
 
 **ssh-keygen** is a tool for creating new authentication key pairs for SSH. Such key pairs are used for automating logins, single sign-on, and for authenticating hosts.
 
 
-Generate a key pair on the Control Machine
+Generate a key pair.
+
+As a `vagrant` user on the **Control Machine**
 ```
       #Optionally, choose algorithm to use or leave it default:
       #   ssh-keygen -t rsa -b 4096
@@ -39,9 +41,9 @@ ssh-keygen
       +----[SHA256]-----+
 ```
 
-## COPYING THE PUBLIC KEY TO THE SERVER
+## COPYING THE PUBLIC KEY TO THE REMOTE SERVER
 
-Copy *public* (**!!!**) key from Control Machine to each Remote Machine (**each** *server*/*user* combination )
+Copy **public** (**!!!**) key from Control Machine to each **Remote Machine** (**each** *server*/*user* combination )
 ```
       #File ~remote_user/.ssh/authorized_keys will be updated on the remote side by default
       
