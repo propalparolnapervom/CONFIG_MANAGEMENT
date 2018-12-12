@@ -26,19 +26,7 @@ ssh-keygen
       Your identification has been saved in /home/vagrant/.ssh/id_rsa.
       Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub.
       The key fingerprint is:
-      SHA256:2p6k1fQavFsY+4Uckhe9rSu0DgBoFK61RGBzrhFmzX8 vagrant@control-host
-      The key's randomart image is:
-      +---[RSA 2048]----+
-      |  B+=.           |
-      | + Oo.       .   |
-      |  . B..     . .  |
-      |   B ...E  . . o |
-      |  o .  .S = o . .|
-      |       o = O.o . |
-      |      . + B.=.o  |
-      |       = . Bo. . |
-      |      . o +oo..  |
-      +----[SHA256]-----+
+      ...
 ```
 
 ## COPYING THE PUBLIC KEY TO THE REMOTE SERVER
