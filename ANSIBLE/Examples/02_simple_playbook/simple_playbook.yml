@@ -1,0 +1,12 @@
+- 
+  name: xbs_play_1
+  hosts: remote
+  tasks:
+      - name: Execute single command "date"
+        command: date
+
+      - name: Execute multiply commands in the shell
+        shell: |
+                echo "done remotely:" > /tmp/dt
+                date >> /tmp/dt
+                pwd >> /tmp/dt

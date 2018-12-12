@@ -1,0 +1,22 @@
+
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "williamyeh/centos7-docker"
+  config.vm.hostname = "remote-host"
+
+  config.vm.network :forwarded_port, guest: 22, host: 2022
+  config.vm.network :forwarded_port, guest: 80, host: 2080
+
+  config.vm.network "private_network", ip: "192.168.50.20"
+
+  config.vm.define "ansible_rmt_vm"
+
+  config.vm.provider "virtualbox" do |v|
+    v.name = "Ansible Remote Host 1"
+  end
+
+  config.vm.provision "add_hosts_block", type: "shell", path: "add_hosts.sh"
+
+
+end

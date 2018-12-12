@@ -29,6 +29,8 @@ ansible --help
 ```
 
 
+
+
 ## SYNTAX
 
 Syntax for Ansible ad-hoc commands is
@@ -47,7 +49,14 @@ ansible <hosts> [-m <module_name>] -a <"arguments"> -u <username> [--become]
    - **become**: It's an optional parameter specified when we want to execute operations that need sudo privilege. By default become is false.
 
 
+## INVENTORY FILE
 
+If no other specified, Ansible expects Inventory file to be a default `/etc/ansible/hosts` one.
+
+If you'd like to specify Inventory file on non-default path/name of the file - just use `-i` key:
+```
+ansible remote -m ping -i inventory.file
+```
 
 ## TEST WITHOUT ACTUAL WORK
 
