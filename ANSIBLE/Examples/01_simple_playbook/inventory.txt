@@ -1,0 +1,6 @@
+rmt1 ansible_host=192.168.50.10 ansible_user=vagrant
+rmt2 ansible_host=192.168.50.20 ansible_user=vagrant
+
+[all]
+rmt1
+rmt2

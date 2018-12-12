@@ -2,6 +2,16 @@
 
 > Make sure `Vagrant` is already installed on your PC
 
+Prepare servers to be used as labs during Ansible examples.
+
+# PREPARATION
+
+Here and further: From you local PC as **Control Machine** ...
+
+```
+cd CONFIG_MANAGEMENT/ANSIBLE/Examples/00_initial_servers
+```
+
 # INSTALL NECESSARY SERVERS
 
 Install following hosts to play with Ansible
@@ -10,7 +20,7 @@ Install following hosts to play with Ansible
 
 Make server up
 ```
-cd machine_1
+cd remote1
 vagrant up
 ```
 
@@ -23,7 +33,7 @@ vagrant ssh
 
 Make server up
 ```
-cd machine_2
+cd remote2
 vagrant up
 ```
 
@@ -44,7 +54,7 @@ vagrant ssh
 
 Generate a key pair.
 
-As a `vagrant` user on the **Control Machine**
+As your user on the local PC (which is **Control Machine** in our case)
 ```
       #Optionally, choose algorithm to use or leave it default:
       #   ssh-keygen -t rsa -b 4096
@@ -70,45 +80,41 @@ Copy **public** (**!!!**) key from **Control Machine** to each **Remote Machine*
 
 (**each** *server*/*user* combination)
 
-As `vagrant` user on **Control Machine**.
+As your user on the local PC (which is **Control Machine** in our case)
 ```
       #File ~remote_user/.ssh/authorized_keys will be updated on the remote side by default
       
-ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub vagrant@remote-host
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@192.168.50.10
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@192.168.50.20
 ```
 
 ## VERIFICATION
 
-As `vagrant` user on **Control Machine** - try to login to each **Remote Machine**
+### ADD FINGERPRINT
+
+As your user on the local PC (which is **Control Machine** in our case)
 ```
-ssh 'vagrant@remote-host'
+ssh 'vagrant@192.168.50.10'
+ssh 'vagrant@192.168.50.20'
 ```
 
 In this case you manually added necessary fingerpring to known hosts list.
 
 Now you can try to ping resources via Ansible.
 
-Login to the **Control Server** as a `vagrant` user.
 
-Make any random dir.
-```
-mkdir -p ~/ansible/ping
-```
-
-Make an **Inventory File** with random name
-```
-cd ~/ansible/ping
-vi inventory.file
-
-remote ansible_host=remote-host
-```
+### PING VIA ANSIBLE
 
 Ping **Remote Host** via Ansible
 ```
-ansible remote -m ping -i inventory.file
+ansible all -m ping -i ping/inventory.txt
 
-    remote | SUCCESS => {
-        "changed": false, 
-        "ping": "pong"
-    }
+      rmt2 | SUCCESS => {
+      "changed": false,
+      "ping": "pong"
+      }
+      rmt1 | SUCCESS => {
+      "changed": false,
+      "ping": "pong"
+      }
 ```

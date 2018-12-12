@@ -1,6 +1,6 @@
 - 
   name: xbs_play_1
-  hosts: remote
+  hosts: all
   tasks:
       - name: Execute single command "date"
         command: date
@@ -10,3 +10,7 @@
                 echo "done remotely:" > /tmp/dt
                 date >> /tmp/dt
                 pwd >> /tmp/dt
+
+      - name: Installing httpd (testing sudo)
+        shell: |
+                sudo yum install httpd -y
