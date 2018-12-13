@@ -1,0 +1,11 @@
+- 
+  name: play will be with root
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+      - name: Make sure httpd is installed and it's latest
+        yum: 
+          name: httpd
+          state: latest
+

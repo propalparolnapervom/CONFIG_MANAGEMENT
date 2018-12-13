@@ -1,0 +1,5 @@
+-
+  name: Add auto names to the file
+  hosts: all
+  roles: 
+      - random_role_name

@@ -1,0 +1,6 @@
+#Vars defined for main.yml file
+
+    auto:
+        - peugeout
+        - citroen
+        - renault

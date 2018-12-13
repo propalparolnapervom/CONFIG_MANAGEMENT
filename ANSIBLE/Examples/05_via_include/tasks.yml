@@ -1,0 +1,6 @@
+#Tasks defined for main.yml file
+
+    -
+      name: Create a file with listed autos
+      shell: echo "{{ item }}" >> /tmp/french_auto.list
+      with_items: "{{ auto }}"

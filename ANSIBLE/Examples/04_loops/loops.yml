@@ -1,0 +1,15 @@
+-
+  name: Add auto names to the file
+  hosts: all
+  vars:
+    auto:
+        - audi
+        - bmw
+        - hyundai
+        - honda
+
+  tasks:
+    -
+      name: Create a file with listed autos
+      shell: echo "{{ item }}" >> /tmp/auto.list
+      with_items: "{{ auto }}"

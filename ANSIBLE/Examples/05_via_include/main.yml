@@ -1,0 +1,8 @@
+-
+  name: Add auto names to the file
+  hosts: all
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - include: tasks.yml

@@ -1,0 +1,11 @@
+  -
+    name: Add name server entry if not already entered
+    hosts: all
+    tasks:
+      - name: Put output of the file to the variable
+        shell: cat /tmp/resolf.conf
+        register: command_output
+
+      - name: Verify necessary line is present in the variable, add line to the file if not 
+        shell: echo "xbs 10.0.250.10" >> /tmp/resolf.conf
+        when: command_output.stdout.find('10.0.250.10') == -1
