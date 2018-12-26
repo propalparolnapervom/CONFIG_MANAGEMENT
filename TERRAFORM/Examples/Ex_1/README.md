@@ -1,10 +1,5 @@
-# TERRAFORM USAGE
 
-
-## OVERALL
-
-**TASK**
-
+## WHAT
 Implement Terraform code, which would deploy an EC2 instance, running within ASG with ELB in front of it. This instance, through ELB, should share port 22 (SSH port) to outside Internet. Think about security of your solution.
 
 
@@ -29,7 +24,7 @@ git --version
 4. Clone Git repo to any random location `<path_to_clone>` (if it wasn't done yet):
 ```
 cd <path_to_clone>
-git clone https://github.com/propalparolnapervom/asg_elb_22.git
+git clone github.com:propalparolnapervom/CONFIG_MANAGEMENT.git
 ```
 
 5. Edit `vars.tf` file to make its variables up-to-date, having following facts about already pre-defined AWS env:
@@ -39,12 +34,12 @@ git clone https://github.com/propalparolnapervom/asg_elb_22.git
   - Necessary Security_Group (EC2) is created;
   - Necessary Key_pair is created
 ```
-vi <path_to_clone>/asg_elb_22/src/vars.tf
+vi <path_to_clone>/TERRAFORM/Examples/Ex_1/src/vars.tf
 ```
 
 5. Start the process of EC2 creation in ASG with ELB:
 ```
-cd <path_to_clone>/asg_elb_22/src
+cd <path_to_clone>/TERRAFORM/Examples/Ex_1/src
 terraform init
 terraform plan
 terraform apply
@@ -54,7 +49,7 @@ terraform apply
 
 7. Destroy just created AWS env, if needed
 ```
-cd <path_to_clone>/asg_elb_22/src
+cd <path_to_clone>/TERRAFORM/Examples/Ex_1/src
 terraform destroy
 ```
 

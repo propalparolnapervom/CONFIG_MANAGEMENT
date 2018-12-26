@@ -1,9 +1,9 @@
-# TFENV ALL
+# README: TFENV
 
 
 ## OVERALL
 
-[tftool](https://github.com/Zordrak/tfenv) is a tool which is Terraform version manager.
+[tfenv](https://github.com/Zordrak/tfenv) is a tool which is Terraform version manager.
 
 
 ## INSTALLATION
