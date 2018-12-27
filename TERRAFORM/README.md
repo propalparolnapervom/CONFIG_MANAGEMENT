@@ -16,10 +16,16 @@ These text files are called **Terraform configurations** and end in:
 
   - `.tf` in case of Terraform format (which is more human-readable, supports comments, and is the generally recommended format for most Terraform files)
   - `.tf.json` in case of JSON (is meant for machines to create, modify, and update, but can also be done by Terraform operators if you prefer)
-  
+
+Configuration files describe to Terraform the components needed to run a single application or your entire datacenter. 
+
+Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. 
+
+As the configuration changes, Terraform is able to determine what changed and create incremental execution plans which can be applied.
+
 When invoking any command that loads the Terraform configuration, Terraform loads all configuration files within the directory specified in alphabetical order.
 
-The files loaded must end in either .tf or .tf.json to specify the format that is in use. Otherwise, the files are ignored. Multiple file formats can be present in the same directory.
+The files loaded must end in either `.tf` or `.tf.json` to specify the format that is in use. Otherwise, the files are ignored. Multiple file formats can be present in the same directory.
 
 Terraform loads all configuration files within a directory and appends them together. Terraform also has a concept of overrides, a way to create files that are loaded last and merged into your configuration, rather than appended.
 
@@ -105,7 +111,13 @@ resource "aws_instance" "web" {
 Then the AMI for the one resource will be replaced with "foo". Note that the override syntax can be Terraform syntax or JSON. You can mix and match syntaxes without issue.
 
 
-## RESOURCES
+## STRUCTURE
+
+The `provider` block is used to configure the named provider, in our case "aws". A provider is responsible for creating and managing resources. Multiple provider blocks can exist if a Terraform configuration is composed of multiple providers, which is a common situation.
+
+The `resource` block defines a resource that exists within the infrastructure. A resource might be a physical component such as an EC2 instance, or it can be a logical resource such as a Heroku application.
+
+### Resource
 
 [Docs](https://www.terraform.io/docs/configuration/resources.html)
 
