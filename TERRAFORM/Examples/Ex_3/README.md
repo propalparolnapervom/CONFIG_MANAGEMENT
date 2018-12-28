@@ -2,14 +2,16 @@
 ## WHAT
 
 Create via Terraform:
-    - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - multiply resources (explict dependency):
+        - S3 bucket;
+        - EC2 instance (which explicitly depends on S3 bucket);
+
 
 ## STEPS
 
 Make sure TF config file contains up-to-date info
 ```
-cat instance.tf
+cat exp_depend.tf
 ```
 
 Initialize the working dir

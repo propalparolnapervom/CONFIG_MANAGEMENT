@@ -2,14 +2,15 @@
 ## WHAT
 
 Create via Terraform:
-    - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - multiply resources (implict dependency):
+        - EC2 instance;
+        - Elastic IP for it (so implictly depends on EC2 instance);
 
 ## STEPS
 
 Make sure TF config file contains up-to-date info
 ```
-cat instance.tf
+cat imp_depend.tf
 ```
 
 Initialize the working dir
