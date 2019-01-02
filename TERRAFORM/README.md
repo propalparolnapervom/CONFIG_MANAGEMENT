@@ -1,6 +1,8 @@
 # TERRAFORM
 
-[Official Docs](https://www.terraform.io/docs/configuration/index.html)
+[Official Docs](https://www.terraform.io/docs/)
+
+[Official Get Started](https://learn.hashicorp.com/terraform/#getting-started)
 
 [Udemy Course](https://www.udemy.com/learn-devops-infrastructure-automation-with-terraform/)
 

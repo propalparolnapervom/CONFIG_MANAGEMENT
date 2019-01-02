@@ -1,16 +1,21 @@
 
 ## WHAT
 
+[Docs](https://learn.hashicorp.com/terraform/getting-started/variables#lists)
+
 Create via Terraform:
-    - multiply resources (implict dependency):
-        - EC2 instance;
-        - Elastic IP for it (so implictly depends on EC2 instance);
+    - 1 provider (AWS);
+    - 1 resource (EC2 instance) with:
+        - variables as **list**:
+            - defined via `var.tf` file
+            - assigned in the default file `terraform.tfvars`
+
 
 ## STEPS
 
 Make sure TF config file contains up-to-date info
 ```
-cat imp_depend.tf
+cat main.tf
 ```
 
 Initialize the working dir
