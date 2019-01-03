@@ -1,13 +1,17 @@
 
 ## WHAT
 
-[Docs](https://www.terraform.io/docs/configuration/variables.html#variable-files)
+[Docs](https://learn.hashicorp.com/terraform/getting-started/variables#lists)
 
 Create via Terraform:
+
     - 1 provider (AWS);
     - 1 resource (EC2 instance) with:
-        - variables, defined via `var.tf` file
-        - variables, assigned in the non-default file `non-def-vars.tfvars` (For all files which match `terraform.tfvars` or `*.auto.tfvars` present in the current dir, Terraform automatically loads them to populate variables)
+        - input variables as **list**:
+            - defined via `var.tf` file
+            - assigned in the default file `terraform.tfvars`
+        - output variable that shows specified input variables during `apply` step
+    - let Terraform keep its state files in the remote backend (s3)
 
 
 ## STEPS
@@ -24,7 +28,7 @@ terraform init
 
 Generate an execution plan (without applying) and put it to the `plan.txt` file
 ```
-terraform plan -out plan.txt -var-file non-def-vars.tfvars
+terraform plan -out plan.txt
 ```
 
 Apply generated plan (no pauses for approve asking)
@@ -54,7 +58,7 @@ terraform show
 
 Destroy infrastructure described by TF config file
 ```
-terraform destroy -var-file non-def-vars.tfvars
+terraform destroy
 ```
 
 

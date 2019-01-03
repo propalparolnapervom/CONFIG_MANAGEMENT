@@ -4,9 +4,10 @@
 [Docs](https://learn.hashicorp.com/terraform/getting-started/variables#maps)
 
 Create via Terraform:
+
     - 1 provider (AWS);
     - 1 resource (EC2 instance) with:
-        - variables as **maps**:
+        - input variables as **maps**:
             - defined via `var.tf` file
             - assigned in the default file `terraform.tfvars`
 

@@ -2,6 +2,7 @@
 ## WHAT
 
 Create via Terraform:
+
     - 1 provider (AWS);
     - 1 resource (EC2 instance) with:
         - provisioner (command) that runs on your PC (only during resource creation)

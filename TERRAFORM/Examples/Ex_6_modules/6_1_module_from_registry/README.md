@@ -4,7 +4,10 @@
 Create via Terraform:
 
     - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - 1 module with:
+        - [the Consul Terraform module for AWS](https://registry.terraform.io/modules/hashicorp/consul/aws)
+        - output variables from module
+
 
 ## STEPS
 

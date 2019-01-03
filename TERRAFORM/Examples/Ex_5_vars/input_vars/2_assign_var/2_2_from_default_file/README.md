@@ -1,10 +1,15 @@
 
 ## WHAT
 
+[Docs](https://www.terraform.io/docs/configuration/variables.html#variable-files)
+
 Create via Terraform:
 
     - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - 1 resource (EC2 instance) with:
+        - input variables, defined via `var.tf` file
+        - input variables, assigned in the default file `terraform.tfvars` (For all files which match `terraform.tfvars` or `*.auto.tfvars` present in the current dir, Terraform automatically loads them to populate variables)
+
 
 ## STEPS
 

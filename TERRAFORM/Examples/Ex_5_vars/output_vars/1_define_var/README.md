@@ -1,10 +1,17 @@
 
 ## WHAT
 
+[Docs](https://learn.hashicorp.com/terraform/getting-started/variables#lists)
+
 Create via Terraform:
 
     - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - 1 resource (EC2 instance) with:
+        - input variables as **list**:
+            - defined via `var.tf` file
+            - assigned in the default file `terraform.tfvars`
+        - output variable that shows specified input variables during `apply` step
+
 
 ## STEPS
 

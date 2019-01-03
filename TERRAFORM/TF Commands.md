@@ -58,6 +58,14 @@ Inspect the current state
 terraform show
 ```
 
+## OUTPUT
+
+View output variable that were previously defined, for already running infrastructure
+
+```
+terraform output instance_pub_ip
+```
+
 
 
 ## GRAPH

@@ -2,6 +2,7 @@
 ## WHAT
 
 Create via Terraform:
+
     - multiply resources (explict dependency):
         - S3 bucket;
         - EC2 instance (which explicitly depends on S3 bucket);

@@ -4,7 +4,9 @@
 Create via Terraform:
 
     - 1 provider (AWS);
-    - 1 resource (EC2 instance)
+    - 1 resource (EC2 instance) with:
+        - variables, defined in the separate file `var.tf` (can be named anything, since Terraform loads all files ending in `.tf` in a directory)
+
 
 ## STEPS
 

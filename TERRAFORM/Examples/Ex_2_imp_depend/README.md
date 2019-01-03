@@ -2,6 +2,7 @@
 ## WHAT
 
 Create via Terraform:
+
     - multiply resources (implict dependency):
         - EC2 instance;
         - Elastic IP for it (so implictly depends on EC2 instance);

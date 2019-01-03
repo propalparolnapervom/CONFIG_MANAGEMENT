@@ -20,17 +20,9 @@ provider "aws" {
 #############################################################################
 
 
-# AMIs are specific to the region that is in use. 
-# One option is to just ask the user to input the proper AMI for the region, but Terraform can do better than that with maps.
-
-# Maps are a way to create variables that are lookup tables.
-
-# So it will choose the AMI depending on `region` var
-resource "aws_instance" "example" {
-  # This introduces a new type of interpolation: a function call. 
-  # The `lookup` function does a dynamic lookup in a map for a key. 
-  # The key is `var.region`, which specifies that the value of the region variables is the key.
-  ami           = "${lookup(var.var_as_map, var.region)}"   # Also could be direct   ${var.var_as_map["eu-central-1"]}
+resource "aws_instance"  "inst_by_tf" {    
+  ami           = "ami-c86c3f23"
   instance_type = "t2.micro"
+
 }
 

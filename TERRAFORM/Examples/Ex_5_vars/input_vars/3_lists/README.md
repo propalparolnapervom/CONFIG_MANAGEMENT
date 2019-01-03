@@ -4,9 +4,10 @@
 [Docs](https://learn.hashicorp.com/terraform/getting-started/variables#lists)
 
 Create via Terraform:
+
     - 1 provider (AWS);
     - 1 resource (EC2 instance) with:
-        - variables as **list**:
+        - input variables as **list**:
             - defined via `var.tf` file
             - assigned in the default file `terraform.tfvars`
 
