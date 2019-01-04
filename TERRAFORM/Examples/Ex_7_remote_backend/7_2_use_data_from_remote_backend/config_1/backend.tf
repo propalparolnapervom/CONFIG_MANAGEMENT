@@ -4,12 +4,13 @@
 ## (state files has to be placed there eventually, instead of local placing)
 #############################################################################
 
+
 # Define backend to store TF state file
 
 terraform {
   backend "s3" {                  # type of the backend
     bucket = "xburser"            # name of the bucket (should be existing)
-    key    = "test/terraform"     # specific path in the bucket where state files have to be placed (not necessarly should exist)
+    key    = "test/terraform/config_1.state"     # specific path in the bucket where state files have to be placed (not necessarly should exist)
     region = "eu-central-1"       # no parameters can be used here:
                                   #   The backend configuration is loaded by Terraform extremely early, before
                                   #   the core of Terraform can be initialized. This is necessary because the backend
@@ -18,3 +19,4 @@ terraform {
                                   #   configuration.
   }
 }
+
