@@ -59,6 +59,13 @@ Destroy infrastructure described by TF config file
 terraform destroy
 ```
 
+## VISUALISATION
+
+Modules:
+
+![Modules](https://github.com/propalparolnapervom/OVERALL/blob/master/Pictures/tf_modules.png "Modules")
+
+
 
 
 
