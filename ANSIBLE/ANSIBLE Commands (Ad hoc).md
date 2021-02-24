@@ -58,6 +58,13 @@ If you'd like to specify Inventory file on non-default path/name of the file - j
 ansible remote -m ping -i inventory.file
 ```
 
+### Inverntory file to work with EC2
+
+When EC2 started and available via appropriate Key Pair, Ansible could work with it with following Inventory file
+```
+webserver ansible_host=3.249.111.206 ansible_user=ubuntu ansible_ssh_private_key_file="/path/to/key_pair.pem"
+```
+
 ## TEST WITHOUT ACTUAL WORK
 
 If you put a `-C` option, then Ansible will do a dry run of the command. It will not actually be applied on the nodes.
