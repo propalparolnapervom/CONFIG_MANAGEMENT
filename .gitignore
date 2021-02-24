@@ -1,0 +1,12 @@
+.terraform
+terraform.tfstate
+*.terrahelpbkp
+terraform.tfstate*.backup
+terraform.tfvars.terrahelpbkp
+*.swp
+*.swo
+*.secret
+*.pem
+*.key
+*.crt
+*.csr

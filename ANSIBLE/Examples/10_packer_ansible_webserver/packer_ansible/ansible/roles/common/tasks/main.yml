@@ -1,0 +1,16 @@
+---
+# Simplest attempt to get latest OS update during AMI creation (no reboots if needed)
+- name: Install latest OS updates
+  apt:
+    # Do not use the aptitude command, instead use the apt-get command 
+    force_apt_get: yes
+    # Run the equivalent of apt-get update command
+    update_cache: yes
+    # Run the equivalent of ‘apt-get upgrade’ command (upgrade all packages to latest version)
+    upgrade: dist
+
+
+# If needed, add users to connect via SSH
+- name: Add admin users
+  include: serveradmins.yml
+  when: webserver_ssh_acces_is_needed == "yes"
