@@ -83,13 +83,14 @@ The plan can be visualized to show dependent ordering.
 
 ### List
 
-List all resources, currently defined in the state file
+List resources, currently defined in the state file
 ```
+# All
 terraform state list
-```
 
-List specific resource, currently defined in the state file
-```
+  # OR
+  
+# Specific
 terraform state list [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
 ```
 
@@ -110,7 +111,7 @@ Let TF become aware about actually existing CloudWatch Log Group resource
 > Appropriate resource `[module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>`  should already be described in the TF code (not applied, but just described)
 
 ```
-terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example> -var-file="vars/some_file.tfvars"
+terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example>
 
   # OR
   
