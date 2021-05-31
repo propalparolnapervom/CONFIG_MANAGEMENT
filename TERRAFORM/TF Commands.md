@@ -123,7 +123,7 @@ terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL
 
 ## DESTROY
 
-Destroy infrastructure described by TF config file
+Destroy ALL!!! infrastructure described by TF config file
 ```
 terraform destroy
 ```
