@@ -79,6 +79,45 @@ The plan can be visualized to show dependent ordering.
 > NB: Once the plan is captured, the execution phase can be limited to only the actions in the plan. 
 
 
+## STATE
+
+### List
+
+List all resources, currently defined in the state file
+```
+terraform state list
+```
+
+List specific resource, currently defined in the state file
+```
+terraform state list [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
+```
+
+### Remove
+Let TF forget about specific resource (without destroying of actual resource).
+```
+terraform state rm [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME> -dry-run
+
+  # OR
+  
+terraform state rm [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
+```
+
+### Import
+
+Let TF become aware about actually existing CloudWatch Log Group resource
+
+> Appropriate resource `[module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>`  should already be described in the TF code (not applied, but just described)
+
+```
+terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example> -var-file="vars/some_file.tfvars"
+
+  # OR
+  
+terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example> -var-file="vars/some_file.tfvars"
+```
+
+
 
 
 ## DESTROY
