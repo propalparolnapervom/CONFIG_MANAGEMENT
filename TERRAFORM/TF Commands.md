@@ -94,6 +94,23 @@ terraform state list
 terraform state list [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
 ```
 
+### Show
+
+Describe specific resource, currently defined in the state file
+```
+terraform state show aws_cloudwatch_log_group.log_grp_name
+
+  # aws_cloudwatch_log_group.log_grp_name:
+  resource "aws_cloudwatch_log_group" "log_grp_name" {
+      arn               = "arn:aws:logs:<AWS_REGION>:<AWS_ACC_NUM>:log-group:/aws/lambda/mc_alert"
+      id                = "/aws/lambda/mc_alert"
+      name              = "/aws/lambda/mc_alert"
+      retention_in_days = 0
+      tags              = {}
+      tags_all          = {}
+  }
+```
+
 ### Remove
 Let TF forget about specific resource (without destroying of actual resource).
 ```
