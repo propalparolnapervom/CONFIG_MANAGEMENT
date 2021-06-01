@@ -132,7 +132,7 @@ terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL
 
   # OR
   
-terraform import [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example> -var-file="vars/some_file.tfvars"
+terraform import -var-file="vars/some_file.tfvars" [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>  <ACTUAL_RESOURCE: name, for example>
 ```
 
 
