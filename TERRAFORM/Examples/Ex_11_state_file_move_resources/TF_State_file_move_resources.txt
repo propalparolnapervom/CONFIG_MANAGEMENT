@@ -1,0 +1,45 @@
+###########################################
+# Don't touch actual physical resources,
+# but move/rename appropriate TF resources
+# within a TF State file
+###########################################
+
+
+# MV 1/2: Which resource should be moved
+
+    # REQUIRED (to save existing logs from removing): aws_cloudwatch_log_group
+export RESOURCE_LOC_OLD="aws_cloudwatch_log_group._"
+export RESOURCE_LOC_NEW="module.lambda.aws_cloudwatch_log_group._"
+
+
+# MV 2/2: Actual moving steps
+
+    # Check variables
+echo "  OLD: ${RESOURCE_LOC_OLD}"
+echo "  NEW: ${RESOURCE_LOC_NEW}"
+
+    # List all TF resources
+# Should show resource
+terraform state list ${RESOURCE_LOC_OLD}
+# Shoud show error
+terraform state list ${RESOURCE_LOC_NEW}
+terraform state show ${RESOURCE_LOC_OLD}
+
+    # Move description of the resource in the state file from old place to the new one
+terraform state mv -dry-run ${RESOURCE_LOC_OLD} ${RESOURCE_LOC_NEW}
+terraform state mv ${RESOURCE_LOC_OLD} ${RESOURCE_LOC_NEW}
+
+    # Make sure actual existing resource is still in the state file,
+    # now in the new place
+# Should show error
+terraform state list ${RESOURCE_LOC_OLD}
+# Shoud show resource
+terraform state list ${RESOURCE_LOC_NEW}
+terraform state show ${RESOURCE_LOC_NEW}
+
+    # If it still present, comment out (or remove) old definition of the resource in the TF code
+
+    # Run the plan
+terraform plan -var-file "vars/${ENVIRONMENT}.tfvars"
+
+
