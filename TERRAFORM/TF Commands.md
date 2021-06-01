@@ -123,6 +123,19 @@ terraform state rm -dry-run [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAM
 terraform state rm [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
 ```
 
+## Move to another location
+
+Don't touch actual physical resource, but move/rename its TF definition (from raw resource to module, for example)
+```
+# Dry run
+terraform state mv -dry-run ${RESOURCE_LOC_OLD} ${RESOURCE_LOC_NEW}
+
+  # OR
+
+# Actual steps
+terraform state mv ${RESOURCE_LOC_OLD} ${RESOURCE_LOC_NEW}
+```
+
 ### Import
 
 Let TF become aware about actually existing CloudWatch Log Group resource
