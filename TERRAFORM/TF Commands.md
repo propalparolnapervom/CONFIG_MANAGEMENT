@@ -114,10 +114,12 @@ terraform state show aws_cloudwatch_log_group.log_grp_name
 ### Remove
 Let TF forget about specific resource (without destroying of actual resource).
 ```
-terraform state rm [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME> -dry-run
+# Dry run
+terraform state rm -dry-run [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
 
   # OR
-  
+
+# Actual removing
 terraform state rm [module.<MODULE_NAME>.]<RESOURCE_TYPE>.<RESOURCE_NAME>
 ```
 
