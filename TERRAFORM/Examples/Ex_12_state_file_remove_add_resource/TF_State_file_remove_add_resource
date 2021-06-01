@@ -1,0 +1,48 @@
+#####################################################
+# Don't touch actual physical resources,
+# but remove appropriate resource from TF state file
+# and than add it back 
+# (to the new place or with new name, for example)
+#####################################################
+
+# RMADD 1/2: Which resource should be deleted and added back to the state file
+
+    # REQUIRED (to save existing logs from removing): aws_cloudwatch_log_group
+export RESOURCE_LOC_OLD="aws_cloudwatch_log_group._"
+export RESOURCE_LOC_NEW="module.lambda.aws_cloudwatch_log_group._"
+export RESOURCE_ACTUAL_NAME="/aws/lambda/alert_dispatcher"
+
+
+# RMADD 2/2: Actual deleting/adding steps
+
+    # Check variables
+echo "  OLD: ${RESOURCE_LOC_OLD}"
+echo "  NEW: ${RESOURCE_LOC_NEW}"
+
+    # List all TF resources
+# Should show resource
+terraform state list ${RESOURCE_LOC_OLD}
+# Shoud show error
+terraform state list ${RESOURCE_LOC_NEW}
+terraform state show ${RESOURCE_LOC_OLD}
+
+    # Let TF forget about resource
+terraform state rm ${RESOURCE_LOC_OLD}
+
+    # Let TF become aware about actually existing resource
+    #
+    # Appropriate resource should already be described in the TF code (not applied, but just described)
+terraform import -var-file="vars/${ENVIRONMENT}.tfvars" ${RESOURCE_LOC_NEW}  ${RESOURCE_ACTUAL_NAME}
+
+    # Make sure actual existing resource is still in the state file,
+    # now in the new place
+# Should show error
+terraform state list ${RESOURCE_LOC_OLD}
+# Shoud show resource
+terraform state list ${RESOURCE_LOC_NEW}
+terraform state show ${RESOURCE_LOC_NEW}
+
+    # If it still present, comment out (or remove) old definition of the resource in the TF code
+
+    # Run the plan
+terraform plan -var-file "vars/${ENVIRONMENT}.tfvars"
