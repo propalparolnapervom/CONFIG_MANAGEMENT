@@ -27,6 +27,7 @@ terraform state list ${RESOURCE_LOC_NEW}
 terraform state show ${RESOURCE_LOC_OLD}
 
     # Let TF forget about resource
+terraform state rm -dry-run ${RESOURCE_LOC_OLD} 
 terraform state rm ${RESOURCE_LOC_OLD}
 
     # Let TF become aware about actually existing resource
