@@ -158,4 +158,6 @@ terraform import -var-file="vars/some_file.tfvars" [module.<MODULE_NAME>.]<RESOU
 Destroy ALL!!! infrastructure described by TF config file
 ```
 terraform destroy
+
+terraform destroy -target=helm_release.kube2iam
 ```
